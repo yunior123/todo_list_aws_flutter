@@ -105,9 +105,7 @@ class _TodosPageState extends State<TodosPage> {
       appBar: AppBar(
         title: const Text('My Todo List'),
       ),
-      body: _isLoading
-          ? const Center(child: const CircularProgressIndicator())
-          : TodosList(todos: _todos),
+      body: TodosList(todos: _todos),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.push(
@@ -193,7 +191,7 @@ class TodoItem extends StatelessWidget {
               ),
             ),
             Icon(
-                todo.completed!
+                todo.completed
                     ? Icons.check_box
                     : Icons.check_box_outline_blank,
                 size: iconSize),
